@@ -1,0 +1,215 @@
+/* GOOGLE FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap');
+
+/* CONFIGURAÇÃO GERAL */
+
+* {
+    font-family: 'Rubik', sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+    border: none;
+    text-transform: capitalize;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+body {
+    background: #10101a;
+}
+
+section {
+    min-height: 100vh;
+    padding: 0 9%;
+    padding-top: 7.5rem;
+}
+
+/* BARRA DE NEVEGAÇÃO */
+
+.heading{
+    text-decoration: none;
+    text-align: center;
+    background: #10101a;
+    color:transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    padding:1rem;
+}
+
+.heading span {
+    color: #f66;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #10101a;
+    padding: 2rem 9%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+}
+
+header .logo {
+    font-size: 2rem;
+    color: #fff;
+    font-weight: 600;
+}
+
+header .logo span {
+    color: #2fbf71;
+}
+
+.navbar {
+    text-decoration: none;
+    display: flex;
+}
+
+.navbar li {
+    text-decoration: none;
+}
+
+.navbar a {
+    text-decoration: none;
+    font-size: 1.6rem;
+    padding: 10px 20px;
+    font-weight: 500;
+    color: #fff;
+}
+
+.navbar a:hover {
+    background: #2fbf71;
+    transition: .3s;
+}
+
+header input {
+    display: none;
+}
+
+header label {
+    text-decoration: none;
+    font-size: 3rem;
+    color: bisque;
+    cursor: pointer;
+    visibility: hidden;
+    opacity: 0;
+}
+
+/* APRESENTAÇÃO */
+
+.home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    background-position: center;
+}
+
+.home .content h5{
+    color: #fff;
+    font-size: 45px;
+    font-weight: 500;
+    margin: 0 0 20px;
+}
+
+.home .content p {
+    max-width: 470px;
+    font-size: 1.5rem;
+    font-weight: 100;
+    line-height: 2rem;
+    margin-bottom: 1.5rem;
+    color: #fff;
+    text-transform: initial;
+}
+
+.home .content span {
+    color: #2fbf71;
+}
+
+.home .image img {
+    max-width: 100%;
+    width: 600px;
+    height: auto;
+    animation: float 3s linear infinite;
+}
+
+@keyframes float{
+    0%, 100% {
+        transform: translateY(0rem);
+    }
+    50% {
+        transform: translateY(-3.5rem);
+    }
+}
+
+.btn {
+    background: #2fbf71;
+    color: #fff;
+    box-shadow: 4px 4px #fff;
+    padding: 0 25px;
+    line-height: 42px;
+    display: inline-block;
+    border: 1px solid transparent;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    transition: ease all 0.35s;
+}
+
+.btn:hover {
+    background: #fff;
+    color: #2fbf71;
+    box-shadow: 4px 4px #2fbf71;
+}
+
+/* RESPONSIVO */
+
+@media (max-width:768px){
+    header label{
+        visibility: visible;
+        opacity: 1;
+    }
+
+    header .navbar{
+        position: absolute;
+        top:100%; left: 0;
+        width:100%;
+        background: #10101a;
+        padding:1rem 2rem;
+        border-top: .1rem solid rgba(0,0,0,.2);
+        box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+        transform-origin: top;
+        transform: scaleY(0);
+        opacity: 0;
+        transition: .2s linear;
+        transition: .2s linear;
+    }
+
+    header .navbar a{
+        text-decoration: none;
+        display: contents;
+        margin:2rem 0;
+        font-size: 1.5rem;
+    }
+
+    header input:checked ~ .navbar{
+        transform: scaleY(1);
+        opacity: 1;
+        transition: .3s linear;
+    }
+
+    header input:checked ~ label::before{
+        content:'\f00d';
+    }
+
+}
